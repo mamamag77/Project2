@@ -13,18 +13,19 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton"
+        android:id="@+id/Vendor0"
         android:layout_below="@+id/section_label"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="@drawable/v0"
-        android:onClick="onClickV0" />
+        android:onClick="onClickV0"
+        android:focusable="false" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton2"
-        android:layout_below="@+id/imageButton"
+        android:id="@+id/Vendor1"
+        android:layout_below="@+id/Vendor0"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="@drawable/v1" />

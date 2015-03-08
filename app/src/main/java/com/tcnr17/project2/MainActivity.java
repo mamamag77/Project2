@@ -1,6 +1,7 @@
 package com.tcnr17.project2;
 
 import android.app.Activity;
+import android.media.Image;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -8,6 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -16,7 +18,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity
@@ -184,13 +189,13 @@ public class MainActivity extends ActionBarActivity
                     getArguments().getInt(ARG_SECTION_NUMBER));
         }
     }
-    public static class Act0Fragment extends Fragment {
+    public static class Act0Fragment extends Fragment implements View.OnClickListener {
         /**
          * The fragment argument representing the section number for this
          * fragment.
          */
         private static final String ARG_SECTION_NUMBER = "section_number";
-
+        ImageButton btn;
         /**
          * Returns a new instance of this fragment for the given section
          * number.
@@ -210,9 +215,13 @@ public class MainActivity extends ActionBarActivity
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_act0, container, false);
+            btn=(ImageButton)rootView.findViewById(R.id.Vendor0);
+            btn.setOnClickListener(this);
             return rootView;
         }
-
+public void onClick(View v){
+    Log.d("debug", "vendor0");
+}
         @Override
         public void onAttach(Activity activity) {
             super.onAttach(activity);
