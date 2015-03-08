@@ -31,7 +31,7 @@ public class MainActivity extends ActionBarActivity
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
     private CharSequence mTitle;
-
+    private int mSelectedItemId=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +49,7 @@ public class MainActivity extends ActionBarActivity
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
+        mSelectedItemId=position;
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
         switch (position){
@@ -97,7 +98,22 @@ public class MainActivity extends ActionBarActivity
         ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayShowTitleEnabled(true);
-        actionBar.setTitle(mTitle);
+        //   actionBar.setTitle(mTitle);
+        switch (mSelectedItemId){
+            case 0:
+                actionBar.setTitle( getString(R.string.title_section1));
+                break;
+            case 1:
+                actionBar.setTitle( getString(R.string.title_section2));
+                break;
+            case 2:
+                actionBar.setTitle( getString(R.string.title_section3));
+                break;
+            default:
+                actionBar.setTitle( getString(R.string.app_name));
+                break;
+        }
+
     }
 
 
